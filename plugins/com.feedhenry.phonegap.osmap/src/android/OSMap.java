@@ -16,7 +16,7 @@ public class OSMap extends CordovaPlugin implements TileFetcherDelegate{
     super.initialize(cordova, webView);
     Log.i("osmap","start to init tilefetcher");
     File path = Environment.getExternalStorageDirectory();
-    tileFetcher=new SpargonetTileFetcher(cordova.getActivity(),this,path.getPath()+DB_NAME);
+    tileFetcher=new SpargonetTileFetcher(cordova.getActivity(),this);
     Log.i("osmap","tilefetcher initialised: "+path.getPath()+DB_NAME);
   }
 
@@ -36,14 +36,19 @@ public class OSMap extends CordovaPlugin implements TileFetcherDelegate{
     return false;
   }
   private void getMapTile(JSONArray args, CallbackContext callbackContext) throws JSONException {
-        JSONObject r=new JSONObject();
         JSONObject options=args.getJSONObject(0);
         int x=options.getInt("x");
         int y=options.getInt("y");
-        String z=options.getString("z");
-        String stringBase64ForTile = tileFetcher.requestBase64ForTile(x, y, z);
-        r.put("img",stringBase64ForTile);
-        callbackContext.success(r);
+        int z=options.getInt("z");
+        try{
+            String stringBase64ForTile = tileFetcher.requestBase64ForTile(x, y, z);
+            callbackContext.success(stringBase64ForTile);
+        }catch(UnSupportedZoomLevelException e){
+            callbackContext.error(e.getMessage());
+        }catch(Exception e){
+            callbackContext.error(e.getMessage());
+        }
+
     }
   @Override
   public void tileReadyAsyncCallback(MapTile tile, Bitmap bmp) {

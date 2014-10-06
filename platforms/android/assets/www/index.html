@@ -37,7 +37,7 @@
         y: <input id="var_y" value="0">
       </div>
       <div>
-        z: <input id="var_z" value="OV0">
+        z: <input id="var_z" value="1">
       </div>
       <div>
         <button id="getMap">Get Tile</button>
@@ -53,7 +53,7 @@
                y:document.querySelector("#var_y").value,
                z:document.querySelector("#var_z").value
             },function(res){
-              document.querySelector("#render").src="data:image/png;base64,"+res.img;
+              document.querySelector("#render").src="data:image/png;base64,"+res;
             },function(err){
               alert(err);
             }) 
