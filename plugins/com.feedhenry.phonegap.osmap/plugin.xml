@@ -5,9 +5,12 @@
     version="0.1.0">
     <name>OSMap PhoneGap Plugin</name>
     <description>Ordnance Survey Map Loader retriving base64 encoded image from OS Map SDK</description>
-    <js-module src="www/osmap.js" name="osmap">
+    <js-module src="www/js/osmap.js" name="osmap">
       <clobbers target="osmap"/>
     </js-module>
+    <asset src="www/prod/prod.css" target="osmap.css"/>
+    <asset src="www/prod/prod.js" target="osmap.js"/>
+    <asset src="www/css/osmapimages" target="osmapimages"/>
     <platform name="android">
       <config-file target="res/xml/config.xml" parent="/*">
         <feature name="OSMap">

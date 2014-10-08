@@ -6,7 +6,6 @@
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/classes/com/feedhenry/osmaptest/R$string.class \
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/classes/com/feedhenry/osmaptest/R$xml.class \
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/classes/com/feedhenry/osmaptest/R.class \
-/Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/classes/com/feedhenry/phonegap/OSMap$1.class \
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/classes/com/feedhenry/phonegap/OSMap.class \
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/dexedLibs/classes-a5a30603786ab9fc51fdc664cca879ca.jar \
 /Users/kxiang/work/osmap/osmap-phonegap-testapp/platforms/android/ant-build/dexedLibs/osofflinetilefetcher-24d83a394f3eab56efa37bb8c6a33057.jar \

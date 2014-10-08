@@ -22,41 +22,25 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <!--<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />-->
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="osmap.css" />
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Hello World</title>
         <script src="./cordova.js"></script>
         <script src="./cordova_plugins.js"></script>
+        <script src="./osmap.js"></script>
     </head>
     <body>
-      <div>
-        x: <input id="var_x" value="0">
-      </div>
-      <div>
-        y: <input id="var_y" value="0">
-      </div>
-      <div>
-        z: <input id="var_z" value="1">
-      </div>
-      <div>
-        <button id="getMap">Get Tile</button>
-      </div>
-      <div>
-      <img width="256" height="256" id="render">
-      </div>
+    <div id="maprender" style="width:300px;height:400px;">
+    </div>
+    <div>
+      <div>Goto Location:</div> 
+      <div>Lat:<input id="goto_lat"/></div>
+      <div>Lng:<input id="goto_lng"/></div>
+      <div><button id="curLocationBtn">Current Location</button><button id="goto_btn">Go</button></div>
+    </div>
    </body>
-   <script>
-      document.querySelector("#getMap").addEventListener("click",function(){
-          osmap.getMapTile({
-               x:document.querySelector("#var_x").value,
-               y:document.querySelector("#var_y").value,
-               z:document.querySelector("#var_z").value
-            },function(res){
-              document.querySelector("#render").src="data:image/png;base64,"+res;
-            },function(err){
-              alert(err);
-            }) 
-      })
+   <script src="./js/index.js">
    </script>
 </html>

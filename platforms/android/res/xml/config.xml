@@ -8,6 +8,9 @@
     <feature name="OSMap">
         <param name="android-package" value="com.feedhenry.phonegap.OSMap" />
     </feature>
+    <feature name="Geolocation">
+        <param name="android-package" value="org.apache.cordova.geolocation.GeoBroker" />
+    </feature>
     <name>HelloCordova</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.
