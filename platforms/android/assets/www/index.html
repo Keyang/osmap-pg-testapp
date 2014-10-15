@@ -53,7 +53,7 @@
                y:document.querySelector("#var_y").value,
                z:document.querySelector("#var_z").value
             },function(res){
-              document.querySelector("#render").src="data:image/png;base64,"+res;
+              document.querySelector("#render").src=res;
             },function(err){
               alert(err);
             }) 
